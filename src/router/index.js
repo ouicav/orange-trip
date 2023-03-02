@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHashHistory(),
   // 映射关系: path -> component
   routes: [
@@ -10,21 +10,27 @@ const router = createRouter({
     },
     {
       path: "/home",
-      components: () => import("../views/home/home.vue"),
+      component: () => import("../views/home/home.vue"),
     },
     {
       path: "/favor",
-      components: () => import("../views/favor/favor.vue"),
+      component: () => import("../views/favor/favor.vue"),
     },
     {
       path: "/order",
-      components: () => import("../views/order/order.vue"),
+      component: () => import("../views/order/order.vue"),
     },
     {
       path: "/message",
-      components: () => import("../views/message/message.vue"),
+      component: () => import("../views/message/message.vue"),
+    },
+    {
+      path: "/city",
+      component: () => import("../views/city/city.vue"),
+    },
+    {
+      path: "/search",
+      component: () => import("../views/search/search.vue"),
     },
   ],
 });
-
-export default router;
